@@ -1,0 +1,10 @@
+{% for int_num in range(2, interface_count, 2) %}
+  set interface xe-0/0/0 unit {{ int_num }} vlan-id {{ int_num }}
+  set interface xe-0/0/0 unit {{ int_num }} family inet address 100.0.0.{{ int_num }}/30
+{% endfor %}
+
+{% for int_num in range(2, interface_count, 2) %}
+  set interface xe-0/1/0 unit {{ int_num }} vlan-id {{ int_num }}
+  set interface xe-0/1/0 unit {{ int_num }} family inet address 100.0.1.{{ int_num }}/30
+{% endfor %}
+
