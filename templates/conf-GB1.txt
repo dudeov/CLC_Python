@@ -1,0 +1,487 @@
+
+
+--- start config for GB1-MX1 ---
+
+# MGMT FXP0
+
+delete chassis redundancy
+set groups re0 system host-name GB1-EDG-1A_re0
+set groups re0 system backup-router 10.224.128.1
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.130.1/22 master-only
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.130.10/22
+set groups re0 routing-options static route 10.224.0.0/14 next-hop 10.224.128.1
+set groups re0 routing-options static route 10.224.0.0/14 no-readvertise
+set groups re1 system host-name GB1-EDG-1A_re1
+set groups re1 system backup-router 10.224.128.1
+set groups re1 interfaces fxp0 unit 0 family inet address 10.224.130.1/22 master-only
+set groups re1 interfaces fxp0 unit 0 family inet address 10.224.130.11/22
+set groups re1 routing-options static route 10.224.0.0/14 next-hop 10.224.128.1
+set groups re1 routing-options static route 10.224.0.0/14 no-readvertise
+set groups ha-mode system commit synchronize
+set groups ha-mode chassis redundancy failover on-loss-of-keepalives
+set groups ha-mode chassis redundancy failover on-disk-failure
+set groups ha-mode chassis redundancy graceful-switchover
+set groups ha-mode routing-options nonstop-routing
+set apply-groups re0
+set apply-groups re1
+set apply-groups ha-mode
+
+#CoPP
+
+delete interfaces lo0 unit 1 family inet filter
+delete firewall family inet filter INBOUND_CPP 
+
+
+set interfaces xe-2/0/0 unit 0 family inet filter group 1
+set interfaces ae4.990 family inet filter group 3
+
+
+
+set policy-options prefix-list pl-bgp_peers apply-path "protocols bgp group <*> neighbor <*>"
+set policy-options prefix-list pl-bgp-vrf_peers apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>"
+
+set policy-options prefix-list pl-ntp 127.0.0.1/32
+set policy-options prefix-list pl-ntp apply-path "system ntp server <*>"
+set policy-options prefix-list pl-tacacs-auth apply-path "system tacplus-server <*>"
+set policy-options prefix-list pl-tacacs-acc apply-path "system accounting destination tacplus server <*>"
+set policy-options prefix-list pl-snmp_clients apply-path "snmp community <*> clients <[1-9]*>"
+
+set policy-options prefix-list pl-dns apply-path "system name-server <*>"
+
+set policy-options prefix-list pl-mgmt_hosts 10.224.0.0/14
+
+
+
+
+set firewall policer tcp-control if-exceeding bandwidth-limit 64k
+set firewall policer tcp-control if-exceeding burst-size-limit 16k
+set firewall policer tcp-control then discard
+
+set firewall policer icmp-control filter-specific
+set firewall policer icmp-control if-exceeding bandwidth-limit 256k 
+set firewall policer icmp-control if-exceeding burst-size-limit 50k
+set firewall policer icmp-control then discard
+
+set firewall policer police-mgmt-fs filter-specific
+set firewall policer police-mgmt-fs if-exceeding bandwidth-limit 10m
+set firewall policer police-mgmt-fs if-exceeding burst-size-limit 256k
+set firewall policer police-mgmt-fs then discard
+
+
+set firewall policer vrrp-control if-exceeding bandwidth-limit 1M
+set firewall policer vrrp-control if-exceeding burst-size-limit 100k
+set firewall policer vrrp-control then discard
+
+
+set firewall policer bgp-control if-exceeding bandwidth-limit 15M
+set firewall policer bgp-control if-exceeding burst-size-limit 1M
+set firewall policer bgp-control then discard
+
+
+
+
+set firewall family inet filter control-plane term small-frags from packet-length 1-119
+set firewall family inet filter control-plane term small-frags from first-fragment
+set firewall family inet filter control-plane term small-frags from protocol icmp
+set firewall family inet filter control-plane term small-frags from protocol tcp
+set firewall family inet filter control-plane term small-frags from protocol udp
+set firewall family inet filter control-plane term small-frags then discard
+
+set firewall family inet filter control-plane term frag-overlaps from is-fragment
+set firewall family inet filter control-plane term frag-overlaps from fragment-offset 1-6
+set firewall family inet filter control-plane term frag-overlaps then discard
+
+set firewall family inet filter control-plane term tcp-control from protocol tcp
+set firewall family inet filter control-plane term tcp-control from tcp-flags "(syn & !ack) | fin | rst"
+set firewall family inet filter control-plane term tcp-control then policer tcp-control
+set firewall family inet filter control-plane term tcp-control then count tcp-control-accept
+set firewall family inet filter control-plane term tcp-control then next term
+
+set firewall family inet filter control-plane term bgp from source-prefix-list pl-bgp_peers
+set firewall family inet filter control-plane term bgp from source-prefix-list pl-bgp-vrf_peers
+set firewall family inet filter control-plane term bgp from protocol tcp
+set firewall family inet filter control-plane term bgp from port bgp
+set firewall family inet filter control-plane term bgp then policer bgp-control
+set firewall family inet filter control-plane term bgp then count bgp-accept
+set firewall family inet filter control-plane term bgp then accept
+
+set firewall family inet filter control-plane term public-icmp from protocol icmp
+set firewall family inet filter control-plane term public-icmp from icmp-type echo-request
+set firewall family inet filter control-plane term public-icmp from icmp-type echo-reply
+set firewall family inet filter control-plane term public-icmp from icmp-type unreachable
+set firewall family inet filter control-plane term public-icmp from icmp-type time-exceeded
+set firewall family inet filter control-plane term public-icmp then policer icmp-control
+set firewall family inet filter control-plane term public-icmp then accept
+
+set firewall family inet filter control-plane term traceroute from protocol udp
+set firewall family inet filter control-plane term traceroute from destination-port 33434-33523
+set firewall family inet filter control-plane term traceroute then policer icmp-control
+set firewall family inet filter control-plane term traceroute then accept
+
+set firewall family inet filter control-plane term isis-bfd from interface-group 3
+set firewall family inet filter control-plane term isis-bfd from protocol udp
+set firewall family inet filter control-plane term isis-bfd from source-port 49152
+set firewall family inet filter control-plane term isis-bfd from destination-port 3784
+set firewall family inet filter control-plane term isis-bfd then accept
+
+set firewall family inet filter control-plane term ntp from source-prefix-list pl-ntp
+set firewall family inet filter control-plane term ntp from protocol udp
+set firewall family inet filter control-plane term ntp from port ntp
+set firewall family inet filter control-plane term ntp then policer police-mgmt-fs
+set firewall family inet filter control-plane term ntp then count ntp-accept
+set firewall family inet filter control-plane term ntp then accept
+
+set firewall family inet filter control-plane term tacacs from source-prefix-list pl-tacacs-auth
+set firewall family inet filter control-plane term tacacs from source-prefix-list pl-tacacs-acc
+set firewall family inet filter control-plane term tacacs from protocol tcp
+set firewall family inet filter control-plane term tacacs from source-port 49
+set firewall family inet filter control-plane term tacacs from tcp-established
+set firewall family inet filter control-plane term tacacs then policer police-mgmt-fs
+set firewall family inet filter control-plane term tacacs then count tacacs-accept
+set firewall family inet filter control-plane term tacacs then accept
+
+set firewall family inet filter control-plane term mgmt-snmp from source-prefix-list pl-snmp_clients
+set firewall family inet filter control-plane term mgmt-snmp from protocol udp
+set firewall family inet filter control-plane term mgmt-snmp from destination-port 161
+set firewall family inet filter control-plane term mgmt-snmp then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-snmp then count snmp-accept
+set firewall family inet filter control-plane term mgmt-snmp then accept
+
+set firewall family inet filter control-plane term mgmt-ssh from interface-group-except 1
+set firewall family inet filter control-plane term mgmt-ssh from source-prefix-list pl-mgmt_hosts
+set firewall family inet filter control-plane term mgmt-ssh from protocol tcp
+set firewall family inet filter control-plane term mgmt-ssh from destination-port 22
+set firewall family inet filter control-plane term mgmt-ssh then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-ssh then count ssh-accept
+set firewall family inet filter control-plane term mgmt-ssh then accept
+
+set firewall family inet filter control-plane term vrrp from interface-group-except 1
+set firewall family inet filter control-plane term vrrp from protocol vrrp
+set firewall family inet filter control-plane term vrrp then policer vrrp-control
+set firewall family inet filter control-plane term vrrp then accept
+
+set firewall family inet filter control-plane term mgmt-dhcp-server from interface-group-except 1
+set firewall family inet filter control-plane term mgmt-dhcp-server from protocol udp
+set firewall family inet filter control-plane term mgmt-dhcp-server from port 67
+set firewall family inet filter control-plane term mgmt-dhcp-server from port 68
+set firewall family inet filter control-plane term mgmt-dhcp-server then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-dhcp-server then count dhcp-server-accept
+
+set firewall family inet filter control-plane term dns from interface-group-except 1
+set firewall family inet filter control-plane term dns from source-prefix-list pl-dns
+set firewall family inet filter control-plane term dns from protocol udp
+set firewall family inet filter control-plane term dns from port 53
+set firewall family inet filter control-plane term dns then policer police-mgmt-fs
+set firewall family inet filter control-plane term dns then count dns-accept
+set firewall family inet filter control-plane term dns then accept
+
+set firewall family inet filter control-plane term default-not-defined then count count-discarded
+set firewall family inet filter control-plane term default-not-defined then syslog
+set firewall family inet filter control-plane term default-not-defined then accept
+
+set interfaces lo0 unit 1 family inet filter input control-plane
+set interfaces lo0 unit 0 family inet filter input control-plane
+
+set system syslog file fw-log.txt firewall any
+
+
+#LP policy Edge-Edge
+
+
+set policy-options policy-statement EDG_EDG_V4_IN term IMPORT_POLICY_1 then local-preference 90
+set policy-options policy-statement EDG_EDG_V4_IN term IMPORT_POLICY_1 then next term
+
+set routing-instances INTERNET protocols bgp group EDG_EDG_V4 import EDG_EDG_V4_IN
+
+#Tacacs
+
+set system authentication-order tacplus
+
+set system authentication-order password
+set system ports console authentication-order password
+set system ports console log-out-on-disconnect
+
+
+
+set system tacplus-server 10.224.129.49 secret "$9$I/YcyKM8XbYox7JDkqf5QFn/u1cyKvWxREds2gJZuO1REyvWxNdseKs4"
+set system tacplus-server 10.224.129.49 timeout 5
+set system tacplus-server 10.224.129.49 source-address 10.224.130.1
+set system tacplus-server 10.224.129.50 secret "$9$YloJDik.znCmPtOREyrevWLdsoJDjHm2gT36/tpdbs2gJjHmfT3UD39"
+set system tacplus-server 10.224.129.50 timeout 5
+set system tacplus-server 10.224.129.50 source-address 10.224.130.1
+set system tacplus-server 10.224.161.49 secret "$9$BbOEclKM8dwgLXoGiHmP5QFntOEclevL1INbsYoatuO1IcevLxNbrlb2"
+set system tacplus-server 10.224.161.49 timeout 5
+set system tacplus-server 10.224.161.49 source-address 10.224.130.1
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination tacplus server 10.224.129.49 secret "$9$v5tLxdbs2Gjqg4mT3nCAp0BIyKLxdVwgMWJDiHmPylKMWxVwgoJD-dDk"
+set system accounting destination tacplus server 10.224.129.50 secret "$9$3qIa9A0BIEeMXhc7VY2aJGDik5F9A0O1hn6rvW87N5QFn6AO1hSrvu0vL"
+set system accounting destination tacplus server 10.224.161.49 secret "$9$hS/reWLxNY4Z-dUHmPQz369ABEreW8X-cSwgoaUDBIEcSe8X-VwgMWgJ"
+
+
+set system login message "\n      ________  ___    ________\n     /  _____/ /  /   /  _____/ \n    /  /      /  /   /  / \n   /  /      /  /   /  /  \n  /  /____  /  /__ /  /_____  \n /_______/ /_____//________/  \n \n Access for authorized person only \n\n"
+
+
+
+set system login class class-ro idle-timeout 30
+set system login class class-ro permissions shell
+set system login class class-ro permissions view
+set system login class class-ro permissions view-configuration
+
+
+
+set system login user tacacs-ro class class-ro
+set system login user tacacs-ro shell csh
+
+set system login user tacacs-super class super-user-local
+set system login user tacacs-super shell csh
+
+deactivate system accounting
+
+--- end config for GB1-MX1 ---
+
+
+
+--- start config for GB1-MX2 ---
+
+# MGMT FXP0
+
+delete chassis redundancy
+set groups re0 system host-name GB1-EDG-1B_re0
+set groups re0 system backup-router 10.224.128.1
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.130.2/22 master-only
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.130.20/22
+set groups re0 routing-options static route 10.224.0.0/14 next-hop 10.224.128.1
+set groups re0 routing-options static route 10.224.0.0/14 no-readvertise
+set groups re1 system host-name GB1-EDG-1B_re1
+set groups re1 system backup-router 10.224.128.1
+set groups re1 interfaces fxp0 unit 0 family inet address 10.224.130.2/22 master-only
+set groups re1 interfaces fxp0 unit 0 family inet address 10.224.130.21/22
+set groups re1 routing-options static route 10.224.0.0/14 next-hop 10.224.128.1
+set groups re1 routing-options static route 10.224.0.0/14 no-readvertise
+set groups ha-mode system commit synchronize
+set groups ha-mode chassis redundancy failover on-loss-of-keepalives
+set groups ha-mode chassis redundancy failover on-disk-failure
+set groups ha-mode chassis redundancy graceful-switchover
+set groups ha-mode routing-options nonstop-routing
+set apply-groups re0
+set apply-groups re1
+set apply-groups ha-mode
+
+#CoPP
+
+delete interfaces lo0 unit 1 family inet filter
+delete firewall family inet filter INBOUND_CPP 
+
+
+set interfaces xe-2/0/0 unit 0 family inet filter group 1
+set interfaces ae4.990 family inet filter group 3
+
+
+
+set policy-options prefix-list pl-bgp_peers apply-path "protocols bgp group <*> neighbor <*>"
+set policy-options prefix-list pl-bgp-vrf_peers apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>"
+
+set policy-options prefix-list pl-ntp 127.0.0.1/32
+set policy-options prefix-list pl-ntp apply-path "system ntp server <*>"
+set policy-options prefix-list pl-tacacs-auth apply-path "system tacplus-server <*>"
+set policy-options prefix-list pl-tacacs-acc apply-path "system accounting destination tacplus server <*>"
+set policy-options prefix-list pl-snmp_clients apply-path "snmp community <*> clients <[1-9]*>"
+
+set policy-options prefix-list pl-dns apply-path "system name-server <*>"
+
+set policy-options prefix-list pl-mgmt_hosts 10.224.0.0/14
+
+
+
+
+set firewall policer tcp-control if-exceeding bandwidth-limit 64k
+set firewall policer tcp-control if-exceeding burst-size-limit 16k
+set firewall policer tcp-control then discard
+
+set firewall policer icmp-control filter-specific
+set firewall policer icmp-control if-exceeding bandwidth-limit 256k 
+set firewall policer icmp-control if-exceeding burst-size-limit 50k
+set firewall policer icmp-control then discard
+
+set firewall policer police-mgmt-fs filter-specific
+set firewall policer police-mgmt-fs if-exceeding bandwidth-limit 10m
+set firewall policer police-mgmt-fs if-exceeding burst-size-limit 256k
+set firewall policer police-mgmt-fs then discard
+
+
+set firewall policer vrrp-control if-exceeding bandwidth-limit 1M
+set firewall policer vrrp-control if-exceeding burst-size-limit 100k
+set firewall policer vrrp-control then discard
+
+
+set firewall policer bgp-control if-exceeding bandwidth-limit 15M
+set firewall policer bgp-control if-exceeding burst-size-limit 1M
+set firewall policer bgp-control then discard
+
+
+
+
+set firewall family inet filter control-plane term small-frags from packet-length 1-119
+set firewall family inet filter control-plane term small-frags from first-fragment
+set firewall family inet filter control-plane term small-frags from protocol icmp
+set firewall family inet filter control-plane term small-frags from protocol tcp
+set firewall family inet filter control-plane term small-frags from protocol udp
+set firewall family inet filter control-plane term small-frags then discard
+
+set firewall family inet filter control-plane term frag-overlaps from is-fragment
+set firewall family inet filter control-plane term frag-overlaps from fragment-offset 1-6
+set firewall family inet filter control-plane term frag-overlaps then discard
+
+set firewall family inet filter control-plane term tcp-control from protocol tcp
+set firewall family inet filter control-plane term tcp-control from tcp-flags "(syn & !ack) | fin | rst"
+set firewall family inet filter control-plane term tcp-control then policer tcp-control
+set firewall family inet filter control-plane term tcp-control then count tcp-control-accept
+set firewall family inet filter control-plane term tcp-control then next term
+
+set firewall family inet filter control-plane term bgp from source-prefix-list pl-bgp_peers
+set firewall family inet filter control-plane term bgp from source-prefix-list pl-bgp-vrf_peers
+set firewall family inet filter control-plane term bgp from protocol tcp
+set firewall family inet filter control-plane term bgp from port bgp
+set firewall family inet filter control-plane term bgp then policer bgp-control
+set firewall family inet filter control-plane term bgp then count bgp-accept
+set firewall family inet filter control-plane term bgp then accept
+
+set firewall family inet filter control-plane term public-icmp from protocol icmp
+set firewall family inet filter control-plane term public-icmp from icmp-type echo-request
+set firewall family inet filter control-plane term public-icmp from icmp-type echo-reply
+set firewall family inet filter control-plane term public-icmp from icmp-type unreachable
+set firewall family inet filter control-plane term public-icmp from icmp-type time-exceeded
+set firewall family inet filter control-plane term public-icmp then policer icmp-control
+set firewall family inet filter control-plane term public-icmp then accept
+
+set firewall family inet filter control-plane term traceroute from protocol udp
+set firewall family inet filter control-plane term traceroute from destination-port 33434-33523
+set firewall family inet filter control-plane term traceroute then policer icmp-control
+set firewall family inet filter control-plane term traceroute then accept
+
+set firewall family inet filter control-plane term isis-bfd from interface-group 3
+set firewall family inet filter control-plane term isis-bfd from protocol udp
+set firewall family inet filter control-plane term isis-bfd from source-port 49152
+set firewall family inet filter control-plane term isis-bfd from destination-port 3784
+set firewall family inet filter control-plane term isis-bfd then accept
+
+set firewall family inet filter control-plane term ntp from source-prefix-list pl-ntp
+set firewall family inet filter control-plane term ntp from protocol udp
+set firewall family inet filter control-plane term ntp from port ntp
+set firewall family inet filter control-plane term ntp then policer police-mgmt-fs
+set firewall family inet filter control-plane term ntp then count ntp-accept
+set firewall family inet filter control-plane term ntp then accept
+
+set firewall family inet filter control-plane term tacacs from source-prefix-list pl-tacacs-auth
+set firewall family inet filter control-plane term tacacs from source-prefix-list pl-tacacs-acc
+set firewall family inet filter control-plane term tacacs from protocol tcp
+set firewall family inet filter control-plane term tacacs from source-port 49
+set firewall family inet filter control-plane term tacacs from tcp-established
+set firewall family inet filter control-plane term tacacs then policer police-mgmt-fs
+set firewall family inet filter control-plane term tacacs then count tacacs-accept
+set firewall family inet filter control-plane term tacacs then accept
+
+set firewall family inet filter control-plane term mgmt-snmp from source-prefix-list pl-snmp_clients
+set firewall family inet filter control-plane term mgmt-snmp from protocol udp
+set firewall family inet filter control-plane term mgmt-snmp from destination-port 161
+set firewall family inet filter control-plane term mgmt-snmp then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-snmp then count snmp-accept
+set firewall family inet filter control-plane term mgmt-snmp then accept
+
+set firewall family inet filter control-plane term mgmt-ssh from interface-group-except 1
+set firewall family inet filter control-plane term mgmt-ssh from source-prefix-list pl-mgmt_hosts
+set firewall family inet filter control-plane term mgmt-ssh from protocol tcp
+set firewall family inet filter control-plane term mgmt-ssh from destination-port 22
+set firewall family inet filter control-plane term mgmt-ssh then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-ssh then count ssh-accept
+set firewall family inet filter control-plane term mgmt-ssh then accept
+
+set firewall family inet filter control-plane term vrrp from interface-group-except 1
+set firewall family inet filter control-plane term vrrp from protocol vrrp
+set firewall family inet filter control-plane term vrrp then policer vrrp-control
+set firewall family inet filter control-plane term vrrp then accept
+
+set firewall family inet filter control-plane term mgmt-dhcp-server from interface-group-except 1
+set firewall family inet filter control-plane term mgmt-dhcp-server from protocol udp
+set firewall family inet filter control-plane term mgmt-dhcp-server from port 67
+set firewall family inet filter control-plane term mgmt-dhcp-server from port 68
+set firewall family inet filter control-plane term mgmt-dhcp-server then policer police-mgmt-fs
+set firewall family inet filter control-plane term mgmt-dhcp-server then count dhcp-server-accept
+
+set firewall family inet filter control-plane term dns from interface-group-except 1
+set firewall family inet filter control-plane term dns from source-prefix-list pl-dns
+set firewall family inet filter control-plane term dns from protocol udp
+set firewall family inet filter control-plane term dns from port 53
+set firewall family inet filter control-plane term dns then policer police-mgmt-fs
+set firewall family inet filter control-plane term dns then count dns-accept
+set firewall family inet filter control-plane term dns then accept
+
+set firewall family inet filter control-plane term default-not-defined then count count-discarded
+set firewall family inet filter control-plane term default-not-defined then syslog
+set firewall family inet filter control-plane term default-not-defined then accept
+
+set interfaces lo0 unit 1 family inet filter input control-plane
+set interfaces lo0 unit 0 family inet filter input control-plane
+
+set system syslog file fw-log.txt firewall any
+
+
+#LP policy Edge-Edge
+
+
+set policy-options policy-statement EDG_EDG_V4_IN term IMPORT_POLICY_1 then local-preference 90
+set policy-options policy-statement EDG_EDG_V4_IN term IMPORT_POLICY_1 then next term
+
+set routing-instances INTERNET protocols bgp group EDG_EDG_V4 import EDG_EDG_V4_IN
+
+#Tacacs
+
+set system authentication-order tacplus
+
+set system authentication-order password
+set system ports console authentication-order password
+set system ports console log-out-on-disconnect
+
+
+
+set system tacplus-server 10.224.129.49 secret "$9$I/YcyKM8XbYox7JDkqf5QFn/u1cyKvWxREds2gJZuO1REyvWxNdseKs4"
+set system tacplus-server 10.224.129.49 timeout 5
+set system tacplus-server 10.224.129.49 source-address 10.224.130.2
+set system tacplus-server 10.224.129.50 secret "$9$YloJDik.znCmPtOREyrevWLdsoJDjHm2gT36/tpdbs2gJjHmfT3UD39"
+set system tacplus-server 10.224.129.50 timeout 5
+set system tacplus-server 10.224.129.50 source-address 10.224.130.2
+set system tacplus-server 10.224.161.49 secret "$9$BbOEclKM8dwgLXoGiHmP5QFntOEclevL1INbsYoatuO1IcevLxNbrlb2"
+set system tacplus-server 10.224.161.49 timeout 5
+set system tacplus-server 10.224.161.49 source-address 10.224.130.2
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination tacplus server 10.224.129.49 secret "$9$v5tLxdbs2Gjqg4mT3nCAp0BIyKLxdVwgMWJDiHmPylKMWxVwgoJD-dDk"
+set system accounting destination tacplus server 10.224.129.50 secret "$9$3qIa9A0BIEeMXhc7VY2aJGDik5F9A0O1hn6rvW87N5QFn6AO1hSrvu0vL"
+set system accounting destination tacplus server 10.224.161.49 secret "$9$hS/reWLxNY4Z-dUHmPQz369ABEreW8X-cSwgoaUDBIEcSe8X-VwgMWgJ"
+
+
+set system login message "\n      ________  ___    ________\n     /  _____/ /  /   /  _____/ \n    /  /      /  /   /  / \n   /  /      /  /   /  /  \n  /  /____  /  /__ /  /_____  \n /_______/ /_____//________/  \n \n Access for authorized person only \n\n"
+
+
+
+set system login class class-ro idle-timeout 30
+set system login class class-ro permissions shell
+set system login class class-ro permissions view
+set system login class class-ro permissions view-configuration
+
+
+
+set system login user tacacs-ro class class-ro
+set system login user tacacs-ro shell csh
+
+set system login user tacacs-super class super-user-local
+set system login user tacacs-super shell csh
+
+deactivate system accounting
+
+--- end config for GB1-MX2 ---
+
+

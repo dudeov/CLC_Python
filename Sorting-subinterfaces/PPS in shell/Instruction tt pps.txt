@@ -1,0 +1,140 @@
+Top talkers in shell
+
+root@AU1-CFW-1B% cd /var/tmp
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' | awk -F " " '{print "Input pps: "$4" , Logical interfcae: "$9}' | awk ' $3 > 1 ' | sort -k 3nr | grep -m10 Input
+Input pps: 483278 , Logical interfcae: reth1.1504
+Input pps: 8469 , Logical interfcae: reth1.41
+Input pps: 6919 , Logical interfcae: reth1.1227
+Input pps: 5012 , Logical interfcae: reth1.1104
+Input pps: 1263 , Logical interfcae: reth1.1259
+Input pps: 477 , Logical interfcae: reth1.1547
+Input pps: 386 , Logical interfcae: reth1.1108
+Input pps: 310 , Logical interfcae: reth1.1171
+Input pps: 178 , Logical interfcae: reth1.1382
+Input pps: 176 , Logical interfcae: reth1.173
+root@AU1-CFW-1B% 
+
+Explanation:
+
+1) Get all lines with logical interfaces names and inputs using grep:
+
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :'
+  Logical interface reth1.41 (Index 117) (SNMP ifIndex 602)
+        Input :   24206158247       8469 1961067754234      5415120
+  Logical interface reth1.50 (Index 109) (SNMP ifIndex 594)
+        Input :             0          0             0            0
+  Logical interface reth1.51 (Index 108) (SNMP ifIndex 593)
+        Input :             0          0             0            0
+		
+2) Merge every line containing interface name with a corresponding line containing input using awk(merge every 1-st and 2-nd lines):
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' 
+        Input :   24206158247       8469 1961067754234      5415120  Logical interface reth1.41 (Index 117) (SNMP ifIndex 602)
+        Input :             0          0             0            0  Logical interface reth1.50 (Index 109) (SNMP ifIndex 594)
+        Input :             0          0             0            0  Logical interface reth1.51 (Index 108) (SNMP ifIndex 593)
+        Input :        203069          0      12184140            0  Logical interface reth1.102 (Index 116) (SNMP ifIndex 601)
+        Input :     404561463        176   85750976636       222760  Logical interface reth1.173 (Index 77) (SNMP ifIndex 545)
+        Input :             0          0             0            0  Logical interface reth1.174 (Index 76) (SNMP ifIndex 544)
+        Input :            95          0          5700            0  Logical interface reth1.1102 (Index 199) (SNMP ifIndex 608)
+...
+		
+NR%2 - %2 means mergy by 2 lines
+
+pps - 4th parameter, rethNUM - 9th parameter in each line.
+
+3) Print the following:
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' | awk -F " " '{print "Input pps: "$4" , Logical interfcae: "$9}' 
+Input pps: 8469 , Logical interfcae: reth1.41
+Input pps: 0 , Logical interfcae: reth1.50
+Input pps: 0 , Logical interfcae: reth1.51
+Input pps: 0 , Logical interfcae: reth1.102
+Input pps: 176 , Logical interfcae: reth1.173
+Input pps: 0 , Logical interfcae: reth1.174
+Input pps: 0 , Logical interfcae: reth1.1102
+Input pps: 0 , Logical interfcae: reth1.1103
+...
+
+Note: Now pps is a 3rd parameter
+
+4) Get rid of lines containing 0 pps. 3rd parameter must be larger than 1:
+
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' | awk -F " " '{print "Input pps: "$4" , Logical interfcae: "$9}' | awk ' $3 > 1 ' 
+Input pps: 8469 , Logical interfcae: reth1.41
+Input pps: 176 , Logical interfcae: reth1.173
+Input pps: 5012 , Logical interfcae: reth1.1104
+Input pps: 6 , Logical interfcae: reth1.1106
+Input pps: 386 , Logical interfcae: reth1.1108
+Input pps: 12 , Logical interfcae: reth1.1124
+Input pps: 18 , Logical interfcae: reth1.1140
+Input pps: 52 , Logical interfcae: reth1.1145
+Input pps: 3 , Logical interfcae: reth1.1156
+Input pps: 310 , Logical interfcae: reth1.1171
+Input pps: 14 , Logical interfcae: reth1.1202
+Input pps: 9 , Logical interfcae: reth1.1207
+Input pps: 14 , Logical interfcae: reth1.1216
+Input pps: 6919 , Logical interfcae: reth1.1227
+Input pps: 19 , Logical interfcae: reth1.1246
+Input pps: 1263 , Logical interfcae: reth1.1259
+Input pps: 2 , Logical interfcae: reth1.1300
+Input pps: 6 , Logical interfcae: reth1.1301
+...
+
+5) Sort lines by 3-rd parameter (pps). k - key (not by 1-st parameter), n - means numeric, r - reverse (higher numbers on top), 3 - parameter number.
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' | awk -F " " '{print "Input pps: "$4" , Logical interfcae: "$9}' | awk ' $3 > 1 ' | sort -k 3nr 
+Input pps: 483278 , Logical interfcae: reth1.1504
+Input pps: 8469 , Logical interfcae: reth1.41
+Input pps: 6919 , Logical interfcae: reth1.1227
+Input pps: 5012 , Logical interfcae: reth1.1104
+Input pps: 1263 , Logical interfcae: reth1.1259
+Input pps: 477 , Logical interfcae: reth1.1547
+Input pps: 386 , Logical interfcae: reth1.1108
+Input pps: 310 , Logical interfcae: reth1.1171
+Input pps: 178 , Logical interfcae: reth1.1382
+Input pps: 176 , Logical interfcae: reth1.173
+Input pps: 157 , Logical interfcae: reth1.1423
+Input pps: 157 , Logical interfcae: reth1.1491
+Input pps: 148 , Logical interfcae: reth1.1324
+...
+
+6) Show only 1-st 10 lines containing string "Input" (all lines contain this):
+
+root@AU1-CFW-1B% cat AU1-CFW-1B_sh_int_reth1_20170110_025304 | grep 'Logical \|Input :' | awk '!(NR%2){print$0p}{p=$0}' | awk -F " " '{print "Input pps: "$4" , Logical interfcae: "$9}' | awk ' $3 > 1 ' | sort -k 3nr | grep -m10 Input
+Input pps: 483278 , Logical interfcae: reth1.1504
+Input pps: 8469 , Logical interfcae: reth1.41
+Input pps: 6919 , Logical interfcae: reth1.1227
+Input pps: 5012 , Logical interfcae: reth1.1104
+Input pps: 1263 , Logical interfcae: reth1.1259
+Input pps: 477 , Logical interfcae: reth1.1547
+Input pps: 386 , Logical interfcae: reth1.1108
+Input pps: 310 , Logical interfcae: reth1.1171
+Input pps: 178 , Logical interfcae: reth1.1382
+Input pps: 176 , Logical interfcae: reth1.173
+root@AU1-CFW-1B% 
+
+Ta-daaaa!!!!
+
+
+__________
+
+
+Shell script "tt-pps.sh" by Jon Son:
+
+root@AU1-CFW-1B% sh /var/script/tt-pps.sh AU1-CFW-1B_sh_int_reth1_20170110_183436
+
+Top 10 pps talkers:
+
+Interface: reth1.1504   Input pps: 503806
+Interface: reth1.41     Input pps: 8394
+Interface: reth1.1259   Input pps: 1988
+Interface: reth1.1536   Input pps: 355
+Interface: reth1.1104   Input pps: 273
+Interface: reth1.1324   Input pps: 127
+Interface: reth1.173    Input pps: 123
+Interface: reth1.1382   Input pps: 122
+Interface: reth1.1171   Input pps: 105
+Interface: reth1.1108   Input pps: 98
+

@@ -1,0 +1,22 @@
+---
+sites:
+   CA2-MX1:
+      hostname_re0: CA2-EDG-1A_re0
+      hostname_re1: CA2-EDG-1A_re1
+      defgw: 10.224.32.1
+      fxp0com: 10.224.34.1
+      fxp0_re0: 10.224.34.10
+      fxp0_re1: 10.224.34.11
+      tac1: 10.224.33.49
+      tac2: 10.224.33.50
+      tac3: 10.224.65.49
+   CA2-MX2:
+      hostname_re0: CA2-EDG-1B_re0
+      hostname_re1: CA2-EDG-1B_re1
+      defgw: 10.224.32.1
+      fxp0com: 10.224.34.2
+      fxp0_re0: 10.224.34.20
+      fxp0_re1: 10.224.34.21
+      tac1: 10.224.33.49
+      tac2: 10.224.33.50
+      tac3: 10.224.65.49

@@ -1,0 +1,22 @@
+
+alex.chuvakov@WA1T3NNETHOP01:~/templates$ python prender.py ymx.yml mx.j2      
+
+
+--- start config for DE1-MX2 ---
+
+# MGMT FXP0
+
+delete chassis redundancy
+set groups re0 system host-name DE1-EDG-1B_re0
+set groups re0 system backup-router 10.224.96.1
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.98.2/22 master-only
+set groups re0 interfaces fxp0 unit 0 family inet address 10.224.98.20/22
+set groups re0 routing-options static route 10.224.0.0/14 next-hop 10.224.96.1
+...
+
+
+or in file
+
+alex.chuvakov@WA1T3NNETHOP01:~/templates$ python prender.py ymx.yml mx.j2 >> DE1-MX.txt
+alex.chuvakov@WA1T3NNETHOP01:~/templates$ ls -lh | grep txt
+-rw-rw-r-- 1 alex.chuvakov alex.chuvakov 25K Feb 17 21:02 DE1-MX.txt

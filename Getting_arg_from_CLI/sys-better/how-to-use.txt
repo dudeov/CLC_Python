@@ -1,0 +1,2 @@
+D:\GitHub\Getting_arg_from_CLI\sys-better>python sys-example.py name1.txt name2.txt
+('You enetered', 'name1.txt', 'name2.txt')

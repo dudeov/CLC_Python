@@ -1,0 +1,4 @@
+﻿ch@NY1-SRX-CORE# show security ike | match external-interface | display set 
+set security ike gateway au1-vpn external-interface ge-0/0/6.111
+
+[edit]

@@ -1,0 +1,10 @@
+So, you can put any argument after "-c", for example, some filename and the script will receive it:
+
+D:\GitHub\Getting_arg_from_CLI>python argparse_example.py -c some-name
+You enetered:Namespace(config='some-name')
+
+If you dont put an arg - you will get an error:
+
+D:\GitHub\Getting_arg_from_CLI>python argparse_example.py
+usage: argparse_example.py [-h] -c CONFIG
+argparse_example.py: error: argument -c/--config is required
