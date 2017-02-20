@@ -1,0 +1,43 @@
+---
+sites:
+   DE1-MX1:
+      hostname_re0: DE1-EDG-1A_re0
+      hostname_re1: DE1-EDG-1A_re1
+      defgw: 10.224.96.1
+      fxp0com: 10.224.98.1
+      fxp0_re0: 10.224.98.10
+      fxp0_re1: 10.224.98.11
+      tac1: 10.224.97.49
+      tac2: 10.224.97.50
+      tac3: 10.224.161.49
+   DE1-MX2:
+      hostname_re0: DE1-EDG-1B_re0
+      hostname_re1: DE1-EDG-1B_re1
+      defgw: 10.224.96.1
+      fxp0com: 10.224.98.2
+      fxp0_re0: 10.224.98.20
+      fxp0_re1: 10.224.98.21
+      tac1: 10.224.97.49
+      tac2: 10.224.97.50
+      tac3: 10.224.161.49
+   AU1-MX1:
+      hostname_re0: DE1-EDG-1A_re0
+      hostname_re1: DE1-EDG-1A_re1
+      defgw: 10.224.96.1
+      fxp0com: 10.224.98.1
+      fxp0_re0: 10.224.98.10
+      fxp0_re1: 10.224.98.11
+      tac1: 10.224.97.49
+      tac2: 10.224.97.50
+      tac3: 10.224.161.49
+   AU1-MX2:
+      hostname_re0: DE1-EDG-1B_re0
+      hostname_re1: DE1-EDG-1B_re1
+      defgw: 10.224.96.1
+      fxp0com: 10.224.98.2
+      fxp0_re0: 10.224.98.20
+      fxp0_re1: 10.224.98.21
+      tac1: 10.224.97.49
+      tac2: 10.224.97.50
+      tac3: 10.224.161.49
+

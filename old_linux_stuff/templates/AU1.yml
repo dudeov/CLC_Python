@@ -1,0 +1,22 @@
+---
+sites:
+   AU1-MX1:
+      hostname_re0: AU1-EDG-1A_re0
+      hostname_re1: AU1-EDG-1A_re1
+      defgw: 10.226.32.1
+      fxp0com: 10.226.34.1
+      fxp0_re0: 10.226.34.10
+      fxp0_re1: 10.226.34.11
+      tac1: 10.226.33.49
+      tac2: 10.226.33.50
+      tac3: 10.225.129.49
+   AU1-MX2:
+      hostname_re0: AU1-EDG-1B_re0
+      hostname_re1: AU1-EDG-1B_re1
+      defgw: 10.226.32.1
+      fxp0com: 10.226.34.2
+      fxp0_re0: 10.226.34.20
+      fxp0_re1: 10.226.34.21
+      tac1: 10.226.33.49
+      tac2: 10.226.33.50
+      tac3: 10.225.129.49

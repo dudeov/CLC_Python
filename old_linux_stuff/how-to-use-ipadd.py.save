@@ -1,0 +1,83 @@
+#!python3
+
+import sys
+
+if sys.version_info[0] != 3:
+    print ("Wrong python version is in use, please use python3")
+    exit()
+
+
+from ipaddress import *
+
+ipsec_peer_IPV4_our = IPv4Network('10.0.0.0/22').subnets(new_prefix=30)
+ipsec_peer_IPV4_peer = IPv4Network('20.0.0.0/22').subnets(new_prefix=30)
+ipsec_peer_IPV4_gw = IPv4Network('30.0.0.0/22').subnets(new_prefix=30) 
+
+START_COUNT = 0
+END_COUNT = 4
+
+#COUNT starts from START_COUNT and increases by 1, untill reaches END_COUNT
+for COUNT in range(START_COUNT, END_COUNT + 1):
+
+
+
+
+
+
+
+
+    current_ipv4_net_our = next(ipsec_peer_IPV4_our)
+    current_ipv4_net_peer = next(ipsec_peer_IPV4_peer)
+    current_ipv4_net_gw = next(ipsec_peer_IPV4_gw)
+
+
+    ipv4_host_1 = list(current_ipv4_net_our.hosts())[0]
+    
+    ipv4_host_2 = list(current_ipv4_net_gw.hosts())[0]
+
+
+	
+    print('%s NET is' % (COUNT))
+    print('%s' % (current_ipv4_net_our))
+    print('MASK is %s' % (current_ipv4_net_our.prefixlen)) 	
+    print('1-st host is %s' % (ipv4_host_1))
+    print('2-st host is %s' % (ipv4_host_2))	
+    
+    print()
+    print()
+    print()
+
+
+
+
+    
+set security ike policy client-1 mode main
+set security ike policy client-1 proposals c-p1-psk-aes256-g5-sha256-28800
+set security ike policy client-1 pre-shared-key ascii-text "$9$lUEMWXJZjHkPaZ/tu0hcxNdw4JGUHPfzkquOIRSylKv"
+
+set security ike gateway client-1 ike-policy client-1
+set security ike gateway client-1 address 67.76.103.226
+set security ike gateway client-1 no-nat-traversal
+set security ike gateway client-1 external-interface reth3.998
+
+set security ipsec vpn client-1 ike gateway client-1
+set security ipsec vpn client-1 ike ipsec-policy c-p2-esp-aes256-sha-28800-g2
+set security ipsec vpn client-1 establish-tunnels immediately
+
+set security policies from-zone vpn-zone to-zone cra policy client-1-inbound match source-address 10.200.0.0/16
+set security policies from-zone vpn-zone to-zone cra policy client-1-inbound match destination-address 10.135.244.0/24
+set security policies from-zone vpn-zone to-zone cra policy client-1-inbound match application any
+set security policies from-zone vpn-zone to-zone cra policy client-1-inbound then permit tunnel ipsec-vpn client-1
+set security policies from-zone vpn-zone to-zone cra policy client-1-inbound then permit tunnel pair-policy client-1-outbound
+
+
+set security policies from-zone cra to-zone vpn-zone policy client-1-outbound match source-address 10.135.244.0/24
+set security policies from-zone cra to-zone vpn-zone policy client-1-outbound match destination-address 10.200.0.0/16
+set security policies from-zone cra to-zone vpn-zone policy client-1-outbound match application any
+set security policies from-zone cra to-zone vpn-zone policy client-1-outbound then permit tunnel ipsec-vpn client-1
+set security policies from-zone cra to-zone vpn-zone policy client-1-outbound then permit tunnel pair-policy client-1-inbound
+
+
+set interfaces reth1 unit 3444 vlan-id 3444
+set interfaces reth1 unit 3444 family inet filter input cra-wan
+set interfaces reth1 unit 3444 family inet address 10.135.244.1/24

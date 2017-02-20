@@ -1,0 +1,19 @@
+cli show version node 0 | grep 'Host\|Release' 
+Hostname: AU1-EFW-1A
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 | grep 'Host\|Release' 
+Hostname: CA1-EFW-1A
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 | grep 'Host\|Release' 
+Hostname: CA3-SRX-EDGE-N0
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 | grep 'Host\|Release' 
+Hostname: DE1-SRX-EDGE-N0
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 | grep 'Host\|Release' 
+Hostname: GB1-SRX-EDGE-N0
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 | grep 'Host\|Release' 
+Hostname: GB3-SRX-EDGE-N0
+JUNOS Software Release [12.1X47-D29]
+% 

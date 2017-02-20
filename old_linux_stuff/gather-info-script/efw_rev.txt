@@ -1,0 +1,183 @@
+cli show version node 0 "|" match Hostname 
+Hostname: AU1-EFW-1A
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDP9969          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDR2986          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: CA1-EFW-1A
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 20   750-031019   ACMR8897          SRX1k 10GE SYSIO
+FPC 0            REV 20   750-031019   ACNB3648          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: CA2-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   AAEV1339          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   AAEV1332          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: CA3-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDK7477          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDK5510          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: DE1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 20   750-031019   ACMR5878          SRX1k 10GE SYSIO
+FPC 0            REV 20   750-031019   ACMR5862          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: GB1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   AAEG3061          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   AADP1886          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: GB3-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDH1314          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDK5372          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: IL1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDR3019          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDN3776          SRX1k 10GE SYSIO
+% show version node 0 | match Hostname 
+Hostname: LB1-SRX-EDGE-N0
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-EDGE-N0> show chassis hardware detail | match SYSIO 
+FPC 0            REV 19   750-031019   ACDN8034          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDS1531          SRX1k 10GE SYSIO
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-EDGE-N0> show version node 0 | match Hostname 
+Hostname: LB2-SRX-EDGE-N0
+
+{primary:node0}
+alex.chuvakov@LB2-SRX-EDGE-N0> show chassis hardware detail | match SYSIO 
+FPC 0            REV 19   750-031019   ACDN8023          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDN8020          SRX1k 10GE SYSIO
+
+{primary:node0}
+alex.chuvakov@LB2-SRX-EDGE-N0> cli show version node 0 "|" match Hostname 
+Hostname: NY1-SRX-EDGE-A
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 18   750-031019   AAEA0344          SRX1k 10GE SYSIO
+FPC 0            REV 18   750-031019   AAEB3653          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: SG1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDR6447          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDP4543          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: UC1-EFW-1A
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDP9971          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDL1017          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: UT1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+% cli show version node 0 "|" match Hostname 
+Hostname: VA1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 19   750-031019   ACDK7143          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   ACDK5369          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: VA2-EFW-1A
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 20   750-031019   ACNK4659          SRX1k 10GE SYSIO
+FPC 0            REV 20   750-031019   ACNM4257          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: WA1-SRX-EDGE-N0
+% cli show chassis hardware detail "|" match SYSIO 
+FPC 0            REV 12   750-031019   AADD6493          SRX1k 10GE SYSIO
+FPC 0            REV 19   750-031019   AAFB4285          SRX1k 10GE SYSIO
+% cli show version node 0 "|" match Hostname 
+Hostname: AU1-EFW-1A
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: CA1-EFW-1A
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: CA2-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: CA3-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: DE1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: GB1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: GB3-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: IL1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% show version node 0 | match Hostname 
+Hostname: LB1-SRX-EDGE-N0
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-EDGE-N0> show chassis cluster interfaces | match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-EDGE-N0> show version node 0 | match Hostname 
+Hostname: LB2-SRX-EDGE-N0
+
+{primary:node0}
+alex.chuvakov@LB2-SRX-EDGE-N0> show chassis cluster interfaces | match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+
+{primary:node0}
+alex.chuvakov@LB2-SRX-EDGE-N0> cli show version node 0 "|" match Hostname 
+Hostname: NY1-SRX-EDGE-A
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: SG1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: UC1-EFW-1A
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: UT1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+% cli show version node 0 "|" match Hostname 
+Hostname: VA1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: VA2-EFW-1A
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% cli show version node 0 "|" match Hostname 
+Hostname: WA1-SRX-EDGE-N0
+% cli show chassis cluster interfaces "|" match em 
+    0       em0         Up                 Disabled   
+    1       em1         Up                 Disabled   
+% 

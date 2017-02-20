@@ -1,0 +1,107 @@
+cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: AU1-CFW-1A
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA1-CFW-1A
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA2-SRX-CORE-A-N0
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA3-SRX-CORE-A-N0
+Model: srx5600
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: DE1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: GB1SRX5600-A
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: GB3-SRX-CORE-A-N0
+Model: srx5600
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: IL1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.1X47-D29]
+% show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: LB1-SRX-CORE-N0
+Model: srx1400
+JUNOS Software Release [12.3X48-D43]
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-CORE-N0> show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: LB2-SRX-CORE-N0
+Model: srx1400
+JUNOS Software Release [12.3X48-D43]
+
+{primary:node1}
+alex.chuvakov@LB2-SRX-CORE-N1> cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: NY1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.3X48-D43]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: SG1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: UC1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: UT1-SRX-CORE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: VA1-SRX-CORE-A-N0
+Model: srx5600
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: VA2-CFW-1A
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: WA1-SRX-CORE-N0
+Model: srx5600
+JUNOS Software Release [12.3X48-D40.5]
+% 

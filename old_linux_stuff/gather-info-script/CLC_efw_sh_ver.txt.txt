@@ -1,0 +1,101 @@
+cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: AU1-EFW-1A
+Model: srx1400
+JUNOS Software Release [12.3X48-D40.5]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA1-EFW-1A
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA2-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: CA3-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: DE1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: GB1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: GB3-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: IL1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: LB1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.3X48-D32.1]
+
+{primary:node0}
+alex.chuvakov@LB1-SRX-EDGE-N0> show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: LB2-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.3X48-D40.5]
+
+{primary:node0}
+alex.chuvakov@LB2-SRX-EDGE-N0> cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: NY1-SRX-EDGE-A
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: SG1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: UT1-SRX-EDGE-N0
+Model: srx650
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: VA1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: VA2-EFW-1A
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% cli show version node 0 
+node0:
+--------------------------------------------------------------------------
+Hostname: WA1-SRX-EDGE-N0
+Model: srx1400
+JUNOS Software Release [12.1X47-D29]
+% 

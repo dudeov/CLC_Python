@@ -1,0 +1,68 @@
+root@AU1-CFW-1B> show interface reth1
+
+Physical interface: reth1, Enabled, Physical link is Up
+  Interface index: 129, SNMP ifIndex: 532
+  Link-level type: Ethernet, MTU: 1518, Speed: 10Gbps, BPDU Error: None, MAC-REWRITE Error: None, Loopback: Disabled, Source filtering: Disabled, Flow control: Disabled, Minimum links needed: 1, Minimum bandwidth needed: 0
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Current address: 00:10:db:ff:30:01, Hardware address: 00:10:db:ff:30:01
+  Last flapped   : 2016-03-28 18:32:10 UTC (41w1d 00:02 ago)
+  Input rate     : 2392842720 bps (514558 pps)
+  Output rate    : 34799424 bps (12164 pps)
+
+  Logical interface reth1.41 (Index 117) (SNMP ifIndex 602)
+    Description: BareMetal Build Network
+    Flags: SNMP-Traps 0x4000 VLAN-Tag [ 0x8100.41 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :   24679446799       8394 1998910146562      5402656
+        Output:   24742846500       8144 2282124943648      5931296
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Security: Zone: trust
+    Allowed host-inbound traffic : bfd bgp dvmrp igmp ldp msdp nhrp ospf pgm pim rip router-discovery rsvp sap vrrp dhcp ping traceroute
+    Protocol inet, MTU: 1500
+      Flags: Sendbcast-pkt-to-re
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 10.164.200/21, Local: 10.164.200.1, Broadcast: 10.164.207.255
+    Protocol multiservice, MTU: Unlimited
+
+  Logical interface reth1.50 (Index 109) (SNMP ifIndex 594)
+    Description: Savvis-Shared Services
+    Flags: SNMP-Traps 0x4000 VLAN-Tag [ 0x8100.50 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :             0          0             0            0
+        Output:             4          0           184            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Security: Zone: ctlx
+    Allowed host-inbound traffic : ping traceroute
+    Protocol inet, MTU: 1500
+      Flags: Sendbcast-pkt-to-re
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 10.152.17.0/26, Local: 10.152.17.1, Broadcast: 10.152.17.63
+    Protocol multiservice, MTU: Unlimited
+
+  Logical interface reth1.51 (Index 108) (SNMP ifIndex 593)
+    Description: Savvis-PML Jump Boxes
+    Flags: SNMP-Traps 0x4000 VLAN-Tag [ 0x8100.51 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :             0          0             0            0
+        Output:             4          0           184            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Security: Zone: ctlx
+    Allowed host-inbound traffic : ping traceroute
+    Protocol inet, MTU: 1500
+      Flags: Sendbcast-pkt-to-re
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 10.152.17.64/26, Local: 10.152.17.65, Broadcast: 10.152.17.127
+    Protocol multiservice, MTU: Unlimited
