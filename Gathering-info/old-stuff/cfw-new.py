@@ -6,6 +6,7 @@ from host_efw_undone import efw
 from host_efw_undone import cfw
 from host_efw_undone import name
 
+paramiko.util.log_to_file("filename.log")
 
 UN = raw_input("Username : ")
 PW = getpass.getpass("Password: ") 
@@ -41,13 +42,13 @@ for cfw_ip, hn in  zip(cfw, name):
 
     if output.endswith(('% ', '%\t')):
         print('In shell')
-        remote.send('cli show chassis hardware "|" display xml "|" no-more "|" match "<" \n')
-        time.sleep(3)
+        remote.send('cli show chassis hardware "|" match Chassis \n')
+        time.sleep(6)
         buf = remote.recv(65000)
     elif output.endswith('> '):
         print('In CLI')
-        remote.send('show chassis hardware | display xml | no-more | match < \n')
-        time.sleep(3)
+        remote.send('show chassis hardware | match Chassis \n')
+        time.sleep(6)
         buf = remote.recv(65000)
     else:
         print ('NO PROMT!, next loop')
@@ -73,8 +74,8 @@ for cfw_ip, hn in  zip(cfw, name):
 #    fn = 'CFW-' + hn + '.txt'
     
     fn = 'CLC_output.txt'
-
     f = open(fn, 'a')
+    f.write(hn)
     f.write(buf)
     f.close()
 

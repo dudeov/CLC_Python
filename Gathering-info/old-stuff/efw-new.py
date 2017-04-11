@@ -11,7 +11,7 @@ from host_efw_undone import name
 UN = raw_input("Username : ")
 PW = getpass.getpass("Password: ")
 
-
+paramiko.util.log_to_file("filename.log")
 
 # This loop get IPs of CFWs and EFW and does double SSH from CFW to EFW
 for cfw_ip, efw_ip, hn in  zip(cfw, efw, name):
@@ -41,7 +41,7 @@ for cfw_ip, efw_ip, hn in  zip(cfw, efw, name):
     remote = twrssh.invoke_shell()
     output = remote.recv(65000)
 
-    remote.send('ssh %s@%s \n' % (UN, efw_ip))    
+    remote.send('ssh %s \n' % (efw_ip))    
     time.sleep(2)
     buf1 = remote.recv(65000)
 
@@ -58,6 +58,7 @@ for cfw_ip, efw_ip, hn in  zip(cfw, efw, name):
            remote.send('%s\n' % PW)
            output1 = remote.recv(65000)           
            print(' Password after adding to trust hosts')
+           time.sleep(2)
     elif re.search('\s*assword\s*',buf1): 
         remote.send('%s\n' % PW)
         time.sleep(2)
@@ -71,12 +72,12 @@ for cfw_ip, efw_ip, hn in  zip(cfw, efw, name):
 
     if output1.endswith(('% ', '%\t')):
         print('In shell')
-        remote.send('cli show chassis hardware "|" display xml "|" no-more "|" match "<" \n')
+        remote.send('cli show chassis hardware "|" match Chassis \n')
         time.sleep(3)
         buf = remote.recv(65000)
     elif output1.endswith('> '):
         print('In CLI on CFW')
-        remote.send('show chassis hardware | display xml | no-more | match < \n')
+        remote.send('show chassis hardware | match Chassis \n')
         time.sleep(3)
         buf = remote.recv(65000)
     else:
@@ -94,7 +95,7 @@ for cfw_ip, efw_ip, hn in  zip(cfw, efw, name):
     fn = 'CLC_output.txt'
 
     f = open(fn, 'a')
-
+    f.write(hn)
     f.write(buf)
     f.close()
 

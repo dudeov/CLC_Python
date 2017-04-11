@@ -1,0 +1,612 @@
+DEB [20170410-23:51:54.659] thr=1   paramiko.transport: starting thread (client mode): 0xb6a36890L
+DEB [20170410-23:51:54.659] thr=1   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:51:54.870] thr=1   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:51:54.870] thr=1   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:51:55.089] thr=1   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:51:55.089] thr=1   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:51:55.089] thr=1   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:51:55.089] thr=1   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:51:55.089] thr=1   paramiko.transport: Compression agreed: none
+DEB [20170410-23:51:55.478] thr=1   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:51:55.478] thr=1   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:51:55.493] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.164.8.1: 44beee12e9c0c603d294419ba783a032
+DEB [20170410-23:51:55.494] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:51:55.931] thr=1   paramiko.transport: userauth is OK
+INF [20170410-23:51:56.117] thr=1   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:51:56.117] thr=1   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:51:56.303] thr=1   paramiko.transport: userauth is OK
+INF [20170410-23:51:56.503] thr=1   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:51:56.527] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:51:56.705] thr=1   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:51:56.705] thr=1   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:51:56.907] thr=1   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:51:57.088] thr=1   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:04.110] thr=1   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:04.122] thr=3   paramiko.transport: starting thread (client mode): 0xb6a36850L
+DEB [20170410-23:52:04.123] thr=3   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:04.182] thr=3   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:04.182] thr=3   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:04.236] thr=3   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:04.236] thr=3   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:04.236] thr=3   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:04.236] thr=3   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:04.236] thr=3   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:04.462] thr=3   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:04.463] thr=3   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:04.487] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.54.10.1: 96b0192b62a357679243ff648ff6c86e
+DEB [20170410-23:52:04.487] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:04.579] thr=3   paramiko.transport: userauth is OK
+INF [20170410-23:52:04.610] thr=3   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:04.610] thr=3   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:04.627] thr=3   paramiko.transport: userauth is OK
+INF [20170410-23:52:04.664] thr=3   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:04.683] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:04.693] thr=3   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:04.693] thr=3   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:04.711] thr=3   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:04.721] thr=3   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:11.747] thr=3   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:11.819] thr=4   paramiko.transport: starting thread (client mode): 0xb73eb490L
+DEB [20170410-23:52:11.819] thr=4   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:11.922] thr=4   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:11.922] thr=4   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:12.030] thr=4   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:12.030] thr=4   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:12.030] thr=4   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:12.030] thr=4   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:12.030] thr=4   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:12.209] thr=4   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:12.210] thr=4   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:12.220] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.59.10.1: c34a3eac1003fb9952c3e2085c6abcec
+DEB [20170410-23:52:12.221] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:12.441] thr=4   paramiko.transport: userauth is OK
+INF [20170410-23:52:12.516] thr=4   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:12.516] thr=4   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:12.590] thr=4   paramiko.transport: userauth is OK
+INF [20170410-23:52:12.690] thr=4   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:12.722] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:12.789] thr=4   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:12.789] thr=4   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:12.893] thr=4   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:12.962] thr=4   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:19.985] thr=4   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:20.074] thr=5   paramiko.transport: starting thread (client mode): 0xb7271a50L
+DEB [20170410-23:52:20.074] thr=5   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:20.168] thr=5   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:20.168] thr=5   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:20.291] thr=5   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:20.291] thr=5   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:20.292] thr=5   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:20.292] thr=5   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:20.292] thr=5   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:20.439] thr=5   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:20.439] thr=5   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:20.474] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.104.10.1: 04b87908b82a5e1dae69bb02042c53e9
+DEB [20170410-23:52:20.475] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:20.706] thr=5   paramiko.transport: userauth is OK
+INF [20170410-23:52:20.795] thr=5   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:20.795] thr=5   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:20.891] thr=5   paramiko.transport: userauth is OK
+INF [20170410-23:52:20.997] thr=5   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:21.008] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:21.092] thr=5   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:21.092] thr=5   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:21.193] thr=5   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:21.279] thr=5   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:28.288] thr=5   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:28.440] thr=6   paramiko.transport: starting thread (client mode): 0xb4b83d90L
+DEB [20170410-23:52:28.441] thr=6   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:28.630] thr=6   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:28.631] thr=6   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:28.826] thr=6   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:28.826] thr=6   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:28.826] thr=6   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:28.827] thr=6   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:28.827] thr=6   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:29.087] thr=6   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:29.087] thr=6   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:29.105] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.114.10.1: 89fd23ca6fc20ec6e7cad4100cb06ddc
+DEB [20170410-23:52:29.106] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:29.487] thr=6   paramiko.transport: userauth is OK
+INF [20170410-23:52:29.647] thr=6   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:29.648] thr=6   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:29.821] thr=6   paramiko.transport: userauth is OK
+INF [20170410-23:52:29.996] thr=6   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:30.002] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:30.153] thr=6   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:30.154] thr=6   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:30.320] thr=6   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:30.473] thr=6   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:37.562] thr=6   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:37.749] thr=7   paramiko.transport: starting thread (client mode): 0xb73d5c90L
+DEB [20170410-23:52:37.750] thr=7   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:37.940] thr=7   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:37.940] thr=7   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:38.132] thr=7   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:38.133] thr=7   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:38.133] thr=7   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:38.133] thr=7   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:38.133] thr=7   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:38.370] thr=7   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:38.371] thr=7   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:38.386] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.64.10.1: 2db65479fbbdd795a6b1c503eeee1320
+DEB [20170410-23:52:38.387] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:38.766] thr=7   paramiko.transport: userauth is OK
+INF [20170410-23:52:38.923] thr=7   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:38.923] thr=7   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:39.101] thr=7   paramiko.transport: userauth is OK
+INF [20170410-23:52:39.273] thr=7   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:39.284] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:39.434] thr=7   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:39.434] thr=7   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:39.599] thr=7   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:39.750] thr=7   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:46.854] thr=7   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:47.030] thr=4   paramiko.transport: starting thread (client mode): 0xb73eb490L
+DEB [20170410-23:52:47.030] thr=4   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:47.221] thr=4   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:47.222] thr=4   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:47.413] thr=4   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:47.414] thr=4   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:47.414] thr=4   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:47.414] thr=4   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:47.414] thr=4   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:47.669] thr=4   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:47.669] thr=4   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:47.695] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.109.10.1: 9f5007041d3f5e93bbbb926cdfce17de
+DEB [20170410-23:52:47.695] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:48.068] thr=4   paramiko.transport: userauth is OK
+INF [20170410-23:52:48.225] thr=4   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:48.225] thr=4   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:48.377] thr=4   paramiko.transport: userauth is OK
+INF [20170410-23:52:48.552] thr=4   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:48.560] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:48.709] thr=4   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:48.709] thr=4   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:48.877] thr=4   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:49.027] thr=4   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:56.101] thr=4   paramiko.transport: EOF in transport thread
+DEB [20170410-23:52:56.162] thr=8   paramiko.transport: starting thread (client mode): 0xb4b83dd0L
+DEB [20170410-23:52:56.162] thr=8   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:56.251] thr=8   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:56.252] thr=8   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:56.349] thr=8   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:56.350] thr=8   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:56.350] thr=8   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:56.350] thr=8   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:56.350] thr=8   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:56.503] thr=8   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:56.504] thr=8   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:56.526] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.98.100.1: 4bdb1a288f39dedf22f9ec0ae202906c
+DEB [20170410-23:52:56.527] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:56.720] thr=8   paramiko.transport: userauth is OK
+INF [20170410-23:52:56.784] thr=8   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:56.784] thr=8   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:56.849] thr=8   paramiko.transport: userauth is OK
+INF [20170410-23:52:56.930] thr=8   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:52:56.955] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:52:57.015] thr=8   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:52:57.015] thr=8   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:52:57.081] thr=8   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:57.141] thr=8   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:52:59.201] thr=9   paramiko.transport: starting thread (client mode): 0xb4b83cd0L
+DEB [20170410-23:52:59.201] thr=9   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:52:59.318] thr=9   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:52:59.318] thr=9   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:52:59.421] thr=9   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:52:59.421] thr=9   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:52:59.421] thr=9   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:52:59.421] thr=9   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:52:59.421] thr=9   paramiko.transport: Compression agreed: none
+DEB [20170410-23:52:59.564] thr=9   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:52:59.565] thr=9   paramiko.transport: Switch to new keys ...
+DEB [20170410-23:52:59.601] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.240.11.136: 75ec54c7cb64b434c583e49513af89d7
+DEB [20170410-23:52:59.602] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:52:59.772] thr=9   paramiko.transport: userauth is OK
+INF [20170410-23:52:59.842] thr=9   paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:52:59.842] thr=9   paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:52:59.920] thr=9   paramiko.transport: userauth is OK
+INF [20170410-23:53:00.010] thr=9   paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:00.030] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:00.086] thr=9   paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:00.086] thr=9   paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:00.154] thr=9   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:00.210] thr=9   paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:07.286] thr=9   paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:07.343] thr=10  paramiko.transport: starting thread (client mode): 0xb4b83c90L
+DEB [20170410-23:53:07.343] thr=10  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:07.463] thr=10  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:07.463] thr=10  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:07.566] thr=10  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:07.566] thr=10  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:07.566] thr=10  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:07.566] thr=10  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:07.566] thr=10  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:07.715] thr=10  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:07.715] thr=10  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:07.744] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.242.8.4: 4cf3f1b5f0b99772db46a142965ad2b2
+DEB [20170410-23:53:07.745] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:07.926] thr=10  paramiko.transport: userauth is OK
+INF [20170410-23:53:08.006] thr=10  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. Use of this system
+constitutes consent to monitoring, retrieval, and disclosure
+of any information stored within the network for any purpose
+including criminal prosecution.  Unauthorized or improper use
+of this system may result in administrative disciplinary
+action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:08.007] thr=10  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:08.064] thr=10  paramiko.transport: userauth is OK
+INF [20170410-23:53:08.154] thr=10  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:08.173] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:08.229] thr=10  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:08.229] thr=10  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:08.297] thr=10  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:08.363] thr=10  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:15.434] thr=10  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:15.504] thr=11  paramiko.transport: starting thread (client mode): 0xb4b950d0L
+DEB [20170410-23:53:15.504] thr=11  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:15.605] thr=11  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:15.605] thr=11  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:15.713] thr=11  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:15.713] thr=11  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:15.713] thr=11  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:15.713] thr=11  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:15.714] thr=11  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:15.881] thr=11  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:15.881] thr=11  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:15.904] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.78.10.1: 9f61cc324f136c4c7cb533a0d511da9e
+DEB [20170410-23:53:15.905] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:16.111] thr=11  paramiko.transport: userauth is OK
+INF [20170410-23:53:16.186] thr=11  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:16.186] thr=11  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:16.272] thr=11  paramiko.transport: userauth is OK
+INF [20170410-23:53:16.359] thr=11  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:16.370] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:16.436] thr=11  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:16.436] thr=11  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:16.539] thr=11  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:16.607] thr=11  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:23.670] thr=11  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:23.897] thr=12  paramiko.transport: starting thread (client mode): 0xb4b95a10L
+DEB [20170410-23:53:23.898] thr=12  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:24.139] thr=12  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:24.139] thr=12  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:24.389] thr=12  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:24.389] thr=12  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:24.390] thr=12  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:24.390] thr=12  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:24.390] thr=12  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:24.693] thr=12  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:24.694] thr=12  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:24.699] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.134.8.4: ad0d31ddff3a099cbcd9818e664ad462
+DEB [20170410-23:53:24.700] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:25.212] thr=12  paramiko.transport: userauth is OK
+INF [20170410-23:53:25.429] thr=12  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:25.430] thr=12  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:25.642] thr=12  paramiko.transport: userauth is OK
+INF [20170410-23:53:25.875] thr=12  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:25.897] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:26.106] thr=12  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:26.107] thr=12  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:26.324] thr=12  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:26.535] thr=12  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:33.592] thr=12  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:33.639] thr=13  paramiko.transport: starting thread (client mode): 0xb4b2e090L
+DEB [20170410-23:53:33.639] thr=13  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:33.702] thr=13  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:33.702] thr=13  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:33.761] thr=13  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:33.761] thr=13  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:33.761] thr=13  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:33.761] thr=13  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:33.761] thr=13  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:33.949] thr=13  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:33.949] thr=13  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:33.952] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.124.8.1: 52c5dcb5a6ee4a9faded355f88478677
+DEB [20170410-23:53:33.953] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:34.092] thr=13  paramiko.transport: userauth is OK
+INF [20170410-23:53:34.122] thr=13  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:34.123] thr=13  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:34.176] thr=13  paramiko.transport: userauth is OK
+INF [20170410-23:53:34.232] thr=13  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:34.254] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:34.278] thr=13  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:34.278] thr=13  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:34.332] thr=13  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:34.379] thr=13  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:41.388] thr=13  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:41.433] thr=14  paramiko.transport: starting thread (client mode): 0xb4b2efd0L
+DEB [20170410-23:53:41.433] thr=14  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:41.570] thr=14  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:41.570] thr=14  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:41.662] thr=14  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:41.663] thr=14  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:41.663] thr=14  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:41.663] thr=14  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:41.664] thr=14  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:41.806] thr=14  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:41.807] thr=14  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:41.833] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.98.10.1: b8d864f2455508ff79783e286ed1428a
+DEB [20170410-23:53:41.834] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:41.991] thr=14  paramiko.transport: userauth is OK
+INF [20170410-23:53:42.048] thr=14  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:42.048] thr=14  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:42.093] thr=14  paramiko.transport: userauth is OK
+INF [20170410-23:53:42.176] thr=14  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:42.182] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:42.226] thr=14  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:42.226] thr=14  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:42.296] thr=14  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:42.340] thr=14  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:49.362] thr=14  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:49.440] thr=15  paramiko.transport: starting thread (client mode): 0xb4b27090L
+DEB [20170410-23:53:49.440] thr=15  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:49.529] thr=15  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:49.529] thr=15  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:49.643] thr=15  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:49.643] thr=15  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:49.643] thr=15  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:49.643] thr=15  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:49.643] thr=15  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:49.813] thr=15  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:49.814] thr=15  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:49.841] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.129.10.1: 263fa40b76d0e18c3290f45dbeeb66f6
+DEB [20170410-23:53:49.841] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:50.065] thr=15  paramiko.transport: userauth is OK
+INF [20170410-23:53:50.147] thr=15  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:50.148] thr=15  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:50.223] thr=15  paramiko.transport: userauth is OK
+INF [20170410-23:53:50.360] thr=15  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:50.365] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:50.440] thr=15  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:50.440] thr=15  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:50.542] thr=15  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:50.653] thr=15  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:57.755] thr=15  paramiko.transport: EOF in transport thread
+DEB [20170410-23:53:57.850] thr=16  paramiko.transport: starting thread (client mode): 0xb6a36bd0L
+DEB [20170410-23:53:57.851] thr=16  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:53:57.936] thr=16  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:53:57.936] thr=16  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:53:58.007] thr=16  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:53:58.008] thr=16  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:53:58.008] thr=16  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:53:58.008] thr=16  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:53:58.008] thr=16  paramiko.transport: Compression agreed: none
+DEB [20170410-23:53:58.260] thr=16  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:53:58.261] thr=16  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:53:58.268] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.170.15.1: dbd7495bfd8bd6163e626d2ea7489883
+DEB [20170410-23:53:58.269] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:53:58.505] thr=16  paramiko.transport: userauth is OK
+INF [20170410-23:53:58.584] thr=16  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:53:58.584] thr=16  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:53:58.673] thr=16  paramiko.transport: userauth is OK
+INF [20170410-23:53:58.773] thr=16  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:53:58.785] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:53:58.862] thr=16  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:53:58.862] thr=16  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:53:58.976] thr=16  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:53:59.052] thr=16  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:54:06.111] thr=16  paramiko.transport: EOF in transport thread
+DEB [20170410-23:54:06.127] thr=17  paramiko.transport: starting thread (client mode): 0xb4b95850L
+DEB [20170410-23:54:06.127] thr=17  paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.1.2
+DEB [20170410-23:54:06.148] thr=17  paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6
+INF [20170410-23:54:06.148] thr=17  paramiko.transport: Connected (version 2.0, client OpenSSH_6.6)
+DEB [20170410-23:54:06.151] thr=17  paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20170410-23:54:06.151] thr=17  paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20170410-23:54:06.151] thr=17  paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20170410-23:54:06.151] thr=17  paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20170410-23:54:06.152] thr=17  paramiko.transport: Compression agreed: none
+DEB [20170410-23:54:06.269] thr=17  paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20170410-23:54:06.269] thr=17  paramiko.transport: Switch to new keys ...
+DEB [20170410-23:54:06.291] thr=2   paramiko.transport: Adding ssh-rsa host key for 10.88.10.1: 490d4da7e595659e4547622d37bc4637
+DEB [20170410-23:54:06.292] thr=2   paramiko.transport: Trying discovered key b4c5a78c115c8646a22e235c63410571 in /home/alex.chuvakov/.ssh/id_rsa
+DEB [20170410-23:54:06.373] thr=17  paramiko.transport: userauth is OK
+INF [20170410-23:54:06.381] thr=17  paramiko.transport: Auth banner: NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+This is a private computer system. The unauthorized or improper
+use of this system constitutes consent to monitoring, retrieval,
+and disclosure of any information stored within the network for
+any purpose including criminal prosecution.  Unauthorized or
+improper use of this system may result in administrative
+disciplinary action and civil and criminal penalties.
+
+If you are not an authorized user disconnect IMMEDIATELY!
+
+NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+INF [20170410-23:54:06.381] thr=17  paramiko.transport: Authentication (publickey) failed.
+DEB [20170410-23:54:06.394] thr=17  paramiko.transport: userauth is OK
+INF [20170410-23:54:06.418] thr=17  paramiko.transport: Authentication (password) successful!
+DEB [20170410-23:54:06.424] thr=2   paramiko.transport: [chan 0] Max packet in: 32768 bytes
+DEB [20170410-23:54:06.437] thr=17  paramiko.transport: [chan 0] Max packet out: 32768 bytes
+DEB [20170410-23:54:06.437] thr=17  paramiko.transport: Secsh channel 0 opened.
+DEB [20170410-23:54:06.444] thr=17  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:54:06.447] thr=17  paramiko.transport: [chan 0] Sesch channel 0 request ok
+DEB [20170410-23:54:13.471] thr=17  paramiko.transport: EOF in transport thread
+DEB [20170410-23:54:13.499] thr=8   paramiko.transport: EOF in transport thread
