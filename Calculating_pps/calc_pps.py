@@ -3,51 +3,6 @@ from datetime import datetime, date, time
 import re
 import sys
 
-#Getting file in format of:
-
-#alex.chuvakov@WA1T3NNETHOP01:~$ cat counter.txt 
-#---(refreshed at 2017-05-15 23:14:45 UTC)---
-#206.152.35.161_counter                                  0                    1
-#206.152.35.91_counter                                   0                    1
-#206.152.35.92_counter                                   0                    1
-#206.152.35.93_counter                                   0                    1
-#206.152.35.94_counter                                   0                    1
-#---(refreshed at 2017-05-15 23:14:49 UTC)---
-#206.152.35.161_counter                                  0                    12
-#206.152.35.91_counter                                   0                    12
-#206.152.35.92_counter                                   0                    12
-#206.152.35.93_counter                                   0                    12
-#206.152.35.94_counter                                   0                    12
-#---(refreshed at 2017-05-15 23:14:56 UTC)---
-#206.152.35.161_counter                                  0                    25
-#206.152.35.91_counter                                   0                    25
-#206.152.35.92_counter                                   0                    25
-#206.152.35.93_counter                                   0                    25
-#206.152.35.94_counter                                   0                    25
-
-#and calculates PPS for every period
-
-#Usage:
-#alex.chuvakov@WA1T3NNETHOP01:~$ python calc_pps.py counter.txt 
-
-#Where counter.txt is a name of the file. Appears here: fhand = open(sys.argv[1])
-
-
-#UDP PPS to 206.152.35.92  at 2017-05-15 23:14:49: 2.75
-#UDP PPS to 206.152.35.92  at 2017-05-15 23:15:18: 2.27272727273
-#UDP PPS to 206.152.35.92  at 2017-05-15 23:14:56: 1.85714285714
-#UDP PPS to 206.152.35.92  at 2017-05-15 23:15:07: 1.54545454545
-
-#UDP PPS to 206.152.35.91  at 2017-05-15 23:14:49: 2.75
-#UDP PPS to 206.152.35.91  at 2017-05-15 23:15:18: 2.27272727273
-#UDP PPS to 206.152.35.91  at 2017-05-15 23:14:56: 1.85714285714
-#UDP PPS to 206.152.35.91  at 2017-05-15 23:15:07: 1.54545454545
-
-#...
-
-
-#It show top 10 PPS that was observed for every counter
-
 time = []
 counter_161 = []
 counter_91 = []
@@ -60,7 +15,7 @@ fhand = open(sys.argv[1])
 #Extracting all times and counters values from the file and writing them in lists defined above
 
 for line in fhand:
-    if line.startswith('---'):
+    if line.startswith('2017'):
         time_temp = re.findall('20.*:[0-5][0-9]', line)
         time.extend(time_temp)
 #        print(time)
@@ -127,30 +82,107 @@ c_92 = zip(c_92_value,time)
 #print(c_92)   
 c_92.sort(reverse=True)
 
-#Printing top 10 PPSs observed with the time it happened.
-for key, val in c_92[:10]:
-    print("UDP PPS to 206.152.35.92  at %s: %s" % (val, key))
-
+#Printing top 5 PPSs observed with the time it happened.
+print('--- \n')
+for key, val in c_92[:5]:
+    print("UDP PPS to 206.152.35.92  at %s: %.1f" % (val, key))
+print('--- \n')
 c_91 = zip(c_91_value,time) 
 #print(c_91)   
 c_91.sort(reverse=True)
-for key, val in c_91[:10]:
-    print("UDP PPS to 206.152.35.91  at %s: %s" % (val, key))
-
+for key, val in c_91[:5]:
+    print("UDP PPS to 206.152.35.91  at %s: %.1f" % (val, key))
+print('--- \n')
 c_93 = zip(c_93_value,time) 
 #print(c_93)   
 c_93.sort(reverse=True)
-for key, val in c_93[:10]:
-    print("UDP PPS to 206.152.35.93  at %s: %s" % (val, key))
-
+for key, val in c_93[:5]:
+    print("UDP PPS to 206.152.35.93  at %s: %.1f" % (val, key))
+print('--- \n')
 c_94 = zip(c_94_value,time) 
 #print(c_94)   
 c_94.sort(reverse=True)
-for key, val in c_94[:10]:
-    print("UDP PPS to 206.152.35.94  at %s: %s" % (val, key))
-
+for key, val in c_94[:5]:
+    print("UDP PPS to 206.152.35.94  at %s: %.1f" % (val, key))
+print('--- \n')
 c_161 = zip(c_161_value,time) 
 #print(c_161)   
 c_161.sort(reverse=True)
-for key, val in c_161[:10]:
-    print("UDP PPS to 206.152.35.161  at %s: %s" % (val, key))
+for key, val in c_161[:5]:
+    print("UDP PPS to 206.152.35.161 at %s: %.1f" % (val, key))
+
+
+#How to use the script and what it is for:
+
+#Using
+#
+    
+#Getting file in format of:
+
+#alex.chuvakov@WA1T3NNETHOP01:~$ cat CA3-efw-pps.txt 
+#root@CA3-SRX-EDGE-N0> file show /var/tmp/test.txt | no-more 
+#2017-05-16 23:14:30
+# 
+#Filter: DOS-BLOCK
+#Counters:
+#Name                                                Bytes              Packets
+#206.152.35.161_counter                          113896056               569488
+#206.152.35.91_counter                           113114872               565600
+#206.152.35.92_counter                           128569308               642876
+#206.152.35.93_counter                            93636648               468199
+#206.152.35.94_counter                           111186628               555947
+#2017-05-16 23:14:33
+# 
+#Filter: DOS-BLOCK
+#Counters:
+#Name                                                Bytes              Packets
+#206.152.35.161_counter                          114739056               573703
+#206.152.35.91_counter                           113994072               569996
+#206.152.35.92_counter                           129525508               647657
+#206.152.35.93_counter                            94471448               472373
+#206.152.35.94_counter                           112093828               560483
+#2017-05-16 23:14:36
+
+
+#and calculates PPS for every period
+
+#Usage:
+#alex.chuvakov@WA1T3NNETHOP01:~$ python calc_pps.py CA3-efw-pps.txt
+#--- 
+#
+#UDP PPS to 206.152.35.92  at 2017-05-16 23:25:23: 2773.3
+#UDP PPS to 206.152.35.92  at 2017-05-16 23:19:50: 2765.3
+#UDP PPS to 206.152.35.92  at 2017-05-16 23:25:12: 2435.0
+#UDP PPS to 206.152.35.92  at 2017-05-16 23:24:49: 2428.0
+#UDP PPS to 206.152.35.92  at 2017-05-16 23:20:05: 2393.3
+#--- 
+#
+#UDP PPS to 206.152.35.91  at 2017-05-16 23:20:05: 2210.0
+#UDP PPS to 206.152.35.91  at 2017-05-16 23:20:42: 2064.0
+#UDP PPS to 206.152.35.91  at 2017-05-16 23:21:15: 2058.7
+#UDP PPS to 206.152.35.91  at 2017-05-16 23:21:12: 2008.7
+#UDP PPS to 206.152.35.91  at 2017-05-16 23:20:08: 2007.7
+
+#Where counter.txt is a name of the file. Appears here: fhand = open(sys.argv[1])
+
+
+
+
+#Linux script that collects the data in the background:
+#root@CA3-SRX-EDGE-N0% #!/bin/sh
+#while :
+#do
+#date +%Y-%m-%d' '%H:%M:%S >> /var/tmp/test.txt 2>&1; cli show firewall filter DOS-BLOCK >> /var/tmp/test.txt 2>&1; sleep 2;
+#done
+
+#Running script in the background
+#root@CA3-SRX-EDGE-N0% cat /var/tmp/run-sh.sh &
+#parameter "&" tells to run that in the background, it continus working even after logout
+#need to kill process manually then
+#root@CA3-SRX-EDGE-N0% ps aux | grep run
+#root         98644  0.0  0.1  2396  1048  p0  S+   11:46PM   0:00.01 grep run
+#root         95534  0.0  0.0  1252   388  p2- S    11:13PM   0:00.63 sh /var/tmp/run-sh.sh
+#root@CA3-SRX-EDGE-N0% kill -9 95534
+
+
+#It show top 10 PPS that was observed for every counter

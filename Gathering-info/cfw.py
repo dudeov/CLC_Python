@@ -40,12 +40,12 @@ for cfw_ip, hn in  zip(cfw, name):
 
     if output.endswith(('% ', '%\t')):
         print('In shell')
-        remote.send('cli show chassis hardware "|" match Chassis \n')
+        remote.send('cli ' + 'show chassis hardware | egrep "CAHW3024|AL4416AK0001" \n')
         time.sleep(6)
         buf = remote.recv(65000)
     elif output.endswith('> '):
         print('In CLI')
-        remote.send('show chassis hardware | match Chassis \n')
+        remote.send('show chassis hardware | match "CAHW3024|AL4416AK0001" \n')
         time.sleep(6)
         buf = remote.recv(65000)
     else:
@@ -57,7 +57,7 @@ for cfw_ip, hn in  zip(cfw, name):
 
     
     fn = 'CLC_output.txt'
-    f = open(fn, 'a')
+    f = open(fn, 'w')
     f.write(hn)
     f.write(buf)
     f.close()
