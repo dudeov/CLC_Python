@@ -1,0 +1,373 @@
+﻿
+set firewall family inet filter DOS-BLOCK term count_206.152.32.20 from destination-address 206.152.32.20/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.20 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.20 then count 206.152.32.20_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.20 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.21 from destination-address 206.152.32.21/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.21 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.21 then count 206.152.32.21_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.21 then accept
+set firewall family inet filter DOS-BLOCK term count_206.152.32.22 from destination-address 206.152.32.22/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.22 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.22 then count 206.152.32.22_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.22 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.23 from destination-address 206.152.32.23/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.23 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.23 then count 206.152.32.23_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.23 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.24 from destination-address 206.152.32.24/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.24 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.24 then count 206.152.32.24_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.24 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.25 from destination-address 206.152.32.25/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.25 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.25 then count 206.152.32.25_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.25 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.26 from destination-address 206.152.32.26/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.26 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.26 then count 206.152.32.26_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.26 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.27 from destination-address 206.152.32.27/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.27 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.27 then count 206.152.32.27_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.27 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.28 from destination-address 206.152.32.28/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.28 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.28 then count 206.152.32.28_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.28 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.29 from destination-address 206.152.32.29/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.29 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.29 then count 206.152.32.29_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.29 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.30 from destination-address 206.152.32.30/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.30 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.30 then count 206.152.32.30_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.30 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.31 from destination-address 206.152.32.31/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.31 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.31 then count 206.152.32.31_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.31 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.32 from destination-address 206.152.32.32/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.32 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.32 then count 206.152.32.32_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.32 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.39 from destination-address 206.152.32.39/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.39 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.39 then count 206.152.32.39_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.39 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.50 from destination-address 206.152.32.50/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.50 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.50 then count 206.152.32.50_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.50 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.54 from destination-address 206.152.32.54/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.54 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.54 then count 206.152.32.54_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.54 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.57 from destination-address 206.152.32.57/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.57 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.57 then count 206.152.32.57_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.57 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.62 from destination-address 206.152.32.62/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.62 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.62 then count 206.152.32.62_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.62 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.65 from destination-address 206.152.32.65/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.65 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.65 then count 206.152.32.65_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.65 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.114 from destination-address 206.152.32.114/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.114 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.114 then count 206.152.32.114_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.114 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.190 from destination-address 206.152.32.190/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.190 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.190 then count 206.152.32.190_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.190 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.201 from destination-address 206.152.32.201/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.201 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.201 then count 206.152.32.201_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.201 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.204 from destination-address 206.152.32.204/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.204 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.204 then count 206.152.32.204_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.204 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.211 from destination-address 206.152.32.211/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.211 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.211 then count 206.152.32.211_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.211 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.223 from destination-address 206.152.32.223/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.223 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.223 then count 206.152.32.223_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.223 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.231 from destination-address 206.152.32.231/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.231 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.231 then count 206.152.32.231_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.231 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.232 from destination-address 206.152.32.232/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.232 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.232 then count 206.152.32.232_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.232 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.32.247 from destination-address 206.152.32.247/32
+set firewall family inet filter DOS-BLOCK term count_206.152.32.247 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.32.247 then count 206.152.32.247_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.32.247 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.5 from destination-address 206.152.33.5/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.5 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.5 then count 206.152.33.5_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.5 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.46 from destination-address 206.152.33.46/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.46 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.46 then count 206.152.33.46_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.46 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.50 from destination-address 206.152.33.50/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.50 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.50 then count 206.152.33.50_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.50 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.55 from destination-address 206.152.33.55/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.55 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.55 then count 206.152.33.55_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.55 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.111 from destination-address 206.152.33.111/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.111 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.111 then count 206.152.33.111_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.111 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.126 from destination-address 206.152.33.126/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.126 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.126 then count 206.152.33.126_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.126 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.137 from destination-address 206.152.33.137/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.137 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.137 then count 206.152.33.137_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.137 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.150 from destination-address 206.152.33.150/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.150 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.150 then count 206.152.33.150_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.150 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.171 from destination-address 206.152.33.171/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.171 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.171 then count 206.152.33.171_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.171 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.217 from destination-address 206.152.33.217/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.217 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.217 then count 206.152.33.217_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.217 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.218 from destination-address 206.152.33.218/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.218 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.218 then count 206.152.33.218_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.218 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.219 from destination-address 206.152.33.219/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.219 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.219 then count 206.152.33.219_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.219 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.238 from destination-address 206.152.33.238/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.238 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.238 then count 206.152.33.238_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.238 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.239 from destination-address 206.152.33.239/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.239 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.239 then count 206.152.33.239_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.239 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.240 from destination-address 206.152.33.240/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.240 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.240 then count 206.152.33.240_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.240 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.241 from destination-address 206.152.33.241/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.241 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.241 then count 206.152.33.241_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.241 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.33.242 from destination-address 206.152.33.242/32
+set firewall family inet filter DOS-BLOCK term count_206.152.33.242 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.33.242 then count 206.152.33.242_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.33.242 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.34.2 from destination-address 206.152.34.2/32
+set firewall family inet filter DOS-BLOCK term count_206.152.34.2 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.34.2 then count 206.152.34.2_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.34.2 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.34.116 from destination-address 206.152.34.116/32
+set firewall family inet filter DOS-BLOCK term count_206.152.34.116 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.34.116 then count 206.152.34.116_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.34.116 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.34.117 from destination-address 206.152.34.117/32
+set firewall family inet filter DOS-BLOCK term count_206.152.34.117 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.34.117 then count 206.152.34.117_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.34.117 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.34.157 from destination-address 206.152.34.157/32
+set firewall family inet filter DOS-BLOCK term count_206.152.34.157 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.34.157 then count 206.152.34.157_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.34.157 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.34.218 from destination-address 206.152.34.218/32
+set firewall family inet filter DOS-BLOCK term count_206.152.34.218 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.34.218 then count 206.152.34.218_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.34.218 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.91 from destination-address 206.152.35.91/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.91 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.91 then count 206.152.35.91_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.91 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.92 from destination-address 206.152.35.92/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.92 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.92 then count 206.152.35.92_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.92 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.93 from destination-address 206.152.35.93/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.93 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.93 then count 206.152.35.93_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.93 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.94 from destination-address 206.152.35.94/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.94 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.94 then count 206.152.35.94_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.94 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.123 from destination-address 206.152.35.123/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.123 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.123 then count 206.152.35.123_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.123 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.129 from destination-address 206.152.35.129/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.129 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.129 then count 206.152.35.129_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.129 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.130 from destination-address 206.152.35.130/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.130 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.130 then count 206.152.35.130_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.130 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.146 from destination-address 206.152.35.146/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.146 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.146 then count 206.152.35.146_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.146 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.147 from destination-address 206.152.35.147/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.147 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.147 then count 206.152.35.147_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.147 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.150 from destination-address 206.152.35.150/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.150 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.150 then count 206.152.35.150_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.150 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.161 from destination-address 206.152.35.161/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.161 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.161 then count 206.152.35.161_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.161 then accept
+
+
+set firewall family inet filter DOS-BLOCK term count_206.152.35.222 from destination-address 206.152.35.222/32
+set firewall family inet filter DOS-BLOCK term count_206.152.35.222 from protocol udp
+set firewall family inet filter DOS-BLOCK term count_206.152.35.222 then count 206.152.35.222_counter
+set firewall family inet filter DOS-BLOCK term count_206.152.35.222 then accept
+
+
+
+insert firewall family inet filter DOS-BLOCK term ACCEPT after term count_206.152.35.222

@@ -1,0 +1,2 @@
+import test_temp_delete_me
+print a

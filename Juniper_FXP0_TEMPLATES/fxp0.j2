@@ -1,0 +1,110 @@
+{% for localsite in sites %}
+
+#--- start config for {{ localsite }} -----------------------------------------------------
+
+{% set new = sites[localsite].mgmt_net.split('.')[0:3]|join(".") %}
+
+--- start config for {{ localsite }} CFW ------------------------------------------------------------
+
+delete interfaces fxp0 
+delete groups node0 interfaces fxp0.0
+delete groups node1 interfaces fxp0.0
+set groups node0 system backup-router {{ new  }}.1
+set groups node0 system backup-router destination 10.224.0.0/14
+set groups node0 interfaces fxp0 unit 0 family inet address {{ new  }}.11/22
+set groups node0 interfaces fxp0 unit 0 family inet address {{ new  }}.53/22 master-only
+set groups node0 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups node0 routing-options static route 10.224.0.0/14 no-readvertise
+
+set groups node1 system backup-router {{ new  }}.1
+set groups node1 system backup-router destination 10.224.0.0/14
+set groups node1 interfaces fxp0 unit 0 family inet address {{ new  }}.75/22
+set groups node1 interfaces fxp0 unit 0 family inet address {{ new  }}.53/22 master-only
+set groups node1 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups node1 routing-options static route 10.224.0.0/14 no-readvertise
+set apply-groups "${node}"
+
+
+--- start config for {{ localsite }} EFW -----------------------------------------------------------------------------
+
+delete interfaces fxp0
+delete groups node0 interfaces fxp0.0
+delete groups node1 interfaces fxp0.0
+set groups node0 system backup-router {{ new  }}.1
+set groups node0 system backup-router destination 10.224.0.0/14
+set groups node0 interfaces fxp0 unit 0 family inet address {{ new  }}.12/22
+set groups node0 interfaces fxp0 unit 0 family inet address {{ new  }}.117/22 master-only
+set groups node0 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups node0 routing-options static route 10.224.0.0/14 no-readvertise
+
+set groups node1 system backup-router {{ new  }}.1
+set groups node1 system backup-router destination 10.224.0.0/14
+set groups node1 interfaces fxp0 unit 0 family inet address {{ new  }}.76/22
+set groups node1 interfaces fxp0 unit 0 family inet address {{ new  }}.117/22 master-only
+set groups node1 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups node1 routing-options static route 10.224.0.0/14 no-readvertise
+set apply-groups "${node}"
+
+
+
+--- start config for {{ localsite }} MX1 -----------------------------------------------------------------------------
+
+delete chassis redundancy
+delete system host-name
+delete groups re0
+delete groups re1
+set groups re0 system host-name {{ localsite }}-EDG-1A_re0
+set groups re0 system backup-router {{ new  }}.1
+set groups re0 interfaces fxp0 unit 0 family inet address {{ new  }}.52/22 master-only
+set groups re0 interfaces fxp0 unit 0 family inet address {{ new  }}.5/22
+set groups re0 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups re0 routing-options static route 10.224.0.0/14 no-readvertise
+set groups re1 system host-name {{ localsite }}-EDG-1A_re1
+set groups re1 system backup-router {{ new  }}.1
+set groups re1 interfaces fxp0 unit 0 family inet address {{ new  }}.52/22 master-only
+set groups re1 interfaces fxp0 unit 0 family inet address {{ new  }}.6/22
+set groups re1 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups re1 routing-options static route 10.224.0.0/14 no-readvertise
+set groups ha-mode system commit synchronize
+set groups ha-mode chassis redundancy failover on-loss-of-keepalives
+set groups ha-mode chassis redundancy failover on-disk-failure
+set groups ha-mode chassis redundancy graceful-switchover
+set groups ha-mode routing-options nonstop-routing
+set apply-groups re0
+set apply-groups re1
+set apply-groups ha-mode
+
+
+
+--- start config for {{ localsite }} MX2 -----------------------------------------------------------------------------
+
+delete chassis redundancy
+delete system host-name
+delete groups re0
+delete groups re1
+set groups re0 system host-name {{ localsite }}-EDG-1B_re0
+set groups re0 system backup-router {{ new  }}.1
+set groups re0 interfaces fxp0 unit 0 family inet address {{ new  }}.116/22 master-only
+set groups re0 interfaces fxp0 unit 0 family inet address {{ new  }}.69/22
+set groups re0 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups re0 routing-options static route 10.224.0.0/14 no-readvertise
+set groups re1 system host-name {{ localsite }}-EDG-1B_re1
+set groups re1 system backup-router {{ new  }}.1
+set groups re1 interfaces fxp0 unit 0 family inet address {{ new  }}.116/22 master-only
+set groups re1 interfaces fxp0 unit 0 family inet address {{ new  }}.70/22
+set groups re1 routing-options static route 10.224.0.0/14 next-hop {{ new  }}.1
+set groups re1 routing-options static route 10.224.0.0/14 no-readvertise
+set groups ha-mode system commit synchronize
+set groups ha-mode chassis redundancy failover on-loss-of-keepalives
+set groups ha-mode chassis redundancy failover on-disk-failure
+set groups ha-mode chassis redundancy graceful-switchover
+set groups ha-mode routing-options nonstop-routing
+set apply-groups re0
+set apply-groups re1
+set apply-groups ha-mode
+
+#--- end config for {{ localsite }} ---
+#------------------------------------------------------------------------------------------------------
+
+
+{% endfor %}
